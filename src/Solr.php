@@ -3,7 +3,6 @@
 
 namespace SilverStripe\FullTextSearch\Solr;
 
-
 use Firesphere\SolrSearch\Indexes\BaseIndex;
 use Firesphere\SolrSearch\Services\SolrCoreService;
 
