@@ -1,3 +1,10 @@
 Firesphere\SolrSearch\Indexes\BaseIndex:
   extensions:
     - Firesphere\SolrSearch\Compat\FulltextSearchExtension # Return a FTS compatible result
+    - Firesphere\SolrSearch\Compat\FluentExtension # Fluent compatibility
+Firesphere\SolrSearch\Services\SchemaService:
+  extensions:
+    - Firesphere\SolrSearch\Compat\FluentExtension
+Firesphere\SolrSearch\Factories\DocumentFactory:
+  extensions:
+    - Firesphere\SolrSearch\Compat\FluentExtension
