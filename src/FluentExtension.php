@@ -2,12 +2,12 @@
 
 namespace Firesphere\SolrSearch\Compat;
 
+use Firesphere\SolrSearch\Factories\DocumentFactory;
 use Firesphere\SolrSearch\Indexes\BaseIndex;
 use Firesphere\SolrSearch\Queries\BaseQuery;
-use League\Flysystem\Adapter\Local;
+use Firesphere\SolrSearch\Services\SchemaService;
 use SilverStripe\Core\Extension;
 use Solarium\QueryType\Select\Query\Query;
-use TractorCow\Fluent\Extension\FluentChangesExtension;
 use TractorCow\Fluent\Model\Locale;
 use TractorCow\Fluent\State\FluentState;
 
@@ -24,6 +24,7 @@ if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
 class FluentExtension extends Extension
 {
     protected $fieldLocale;
+
     /**
      * Add the needed language copy fields to Solr
      */
@@ -61,7 +62,7 @@ class FluentExtension extends Extension
         $locale = $fluentState->getLocale();
         /** @var Locale $defaultLocale */
         $defaultLocale = Locale::get()->filter(['IsGlobalDefault' => true])->first();
-        if ($locale !== $defaultLocale->Locale) {
+        if ($locale !== null && $locale !== $defaultLocale->Locale) {
             $field['name'] .= '_' . $locale;
         }
     }
@@ -74,7 +75,7 @@ class FluentExtension extends Extension
     {
         $locale = FluentState::singleton()->getLocale();
         $defaultLocale = Locale::get()->filter(['IsGlobalDefault' => true])->first();
-        if ($locale !== $defaultLocale->Locale) {
+        if ($locale && $defaultLocale !== null && $locale !== $defaultLocale->Locale) {
             $defaultField = $clientQuery->getQueryDefaultField() ?: '_text';
             $clientQuery->setQueryDefaultField($locale . $defaultField);
         }
