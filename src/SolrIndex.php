@@ -20,11 +20,11 @@ class SolrIndex extends BaseIndex
     public function init()
     {
         $this->addClass(SiteTree::class);
-        return parent::init();
+        parent::init();
     }
 
     /**
-     * Return the classname by default
+     * Return the classname by default (Not advised)
      * @return string
      */
     public function getIndexName()
