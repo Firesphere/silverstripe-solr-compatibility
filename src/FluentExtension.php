@@ -7,6 +7,7 @@ use Firesphere\SolrSearch\Indexes\BaseIndex;
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSearch\Services\SchemaService;
 use SilverStripe\Core\Extension;
+use SilverStripe\ORM\DataObject;
 use Solarium\QueryType\Select\Query\Query;
 use TractorCow\Fluent\Model\Locale;
 use TractorCow\Fluent\State\FluentState;
@@ -23,6 +24,9 @@ if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
  */
 class FluentExtension extends Extension
 {
+    /**
+     * @var string
+     */
     protected $fieldLocale;
 
     /**
@@ -42,6 +46,11 @@ class FluentExtension extends Extension
         }
     }
 
+    /**
+     * Add the locale fields
+     * @param array $data
+     * @param DataObject $item
+     */
     public function onAfterFieldDefinition($data, $item)
     {
         $locales = Locale::get()->exclude(['IsGlobalDefault' => true]);
@@ -56,6 +65,11 @@ class FluentExtension extends Extension
         }
     }
 
+    /**
+     * Update the Solr field for the value to use the locale name
+     * @param string $field
+     * @param string $value
+     */
     public function onBeforeAddDoc(&$field, &$value)
     {
         $fluentState = FluentState::singleton();
@@ -68,6 +82,7 @@ class FluentExtension extends Extension
     }
 
     /**
+     * Set to the correct language to search if needed
      * @param BaseQuery $query
      * @param Query $clientQuery
      */

@@ -29,6 +29,6 @@ class SolrIndex extends BaseIndex
      */
     public function getIndexName()
     {
-        return static::class;
+        return str_replace('\\', '_', static::class);
     }
 }
