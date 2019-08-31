@@ -18,21 +18,16 @@ if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
 
 /**
  * Class FluentExtension
- *
+ * Support for Fluent translations. Should be moved to a separate repo or to Fluent
  * @package Firesphere\SolrSearch\Compat
  * @property DocumentFactory|BaseIndex|SchemaService|FluentExtension $owner
  */
 class FluentExtension extends Extension
 {
     /**
-     * @var string
-     */
-    protected $fieldLocale;
-
-    /**
      * Add the needed language copy fields to Solr
      */
-    public function onAfterInit()
+    public function onAfterInit(): void
     {
         $locales = Locale::get()->exclude(['IsGlobalDefault' => true]);
         /** @var BaseIndex $owner */
@@ -51,7 +46,7 @@ class FluentExtension extends Extension
      * @param array $data
      * @param DataObject $item
      */
-    public function onAfterFieldDefinition($data, $item)
+    public function onAfterFieldDefinition($data, $item): void
     {
         $locales = Locale::get()->exclude(['IsGlobalDefault' => true]);
 
@@ -67,10 +62,10 @@ class FluentExtension extends Extension
 
     /**
      * Update the Solr field for the value to use the locale name
-     * @param string $field
+     * @param array $field
      * @param string $value
      */
-    public function onBeforeAddDoc(&$field, &$value)
+    public function onBeforeAddDoc(&$field, &$value): void
     {
         $fluentState = FluentState::singleton();
         $locale = $fluentState->getLocale();
@@ -86,7 +81,7 @@ class FluentExtension extends Extension
      * @param BaseQuery $query
      * @param Query $clientQuery
      */
-    public function onBeforeSearch($query, $clientQuery)
+    public function onBeforeSearch($query, $clientQuery): void
     {
         $locale = FluentState::singleton()->getLocale();
         $defaultLocale = Locale::get()->filter(['IsGlobalDefault' => true])->first();
