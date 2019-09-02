@@ -12,7 +12,7 @@ use SilverStripe\CMS\Model\SiteTree;
  *
  * @package SilverStripe\FullTextSearch\Solr
  */
-class SolrIndex extends BaseIndex
+abstract class SolrIndex extends BaseIndex
 {
     /**
      * Add the SiteTree class by default
