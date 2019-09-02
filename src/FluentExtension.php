@@ -7,6 +7,8 @@ use Firesphere\SolrSearch\Indexes\BaseIndex;
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSearch\Services\SchemaService;
 use SilverStripe\Core\Extension;
+use SilverStripe\ORM\ArrayList;
+use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\DataObject;
 use Solarium\QueryType\Select\Query\Query;
 use TractorCow\Fluent\Model\Locale;
@@ -43,7 +45,7 @@ class FluentExtension extends Extension
 
     /**
      * Add the locale fields
-     * @param array $data
+     * @param ArrayList|DataList $data
      * @param DataObject $item
      */
     public function onAfterFieldDefinition($data, $item): void
