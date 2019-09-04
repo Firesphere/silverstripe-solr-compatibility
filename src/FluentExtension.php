@@ -20,7 +20,8 @@ if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
 
 /**
  * Class FluentExtension
- * Support for Fluent translations. Should be moved to a separate repo or to Fluent
+ * Support for Fluent translations.
+ * This class should be moved to a separate repo or to Fluent, but provides the basic Fluent support for now
  * @package Firesphere\SolrSearch\Compat
  * @property DocumentFactory|BaseIndex|SchemaService|FluentExtension $owner
  */
