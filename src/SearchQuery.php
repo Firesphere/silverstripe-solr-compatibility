@@ -31,4 +31,27 @@ class SearchQuery extends BaseQuery
 
         return $this;
     }
+
+    /**
+     * Set the rows that are to be returned
+     * Compatibility stub
+     * @param int $limit
+     * @return $this
+     */
+    public function setLimit($limit): self
+    {
+        $this->rows = $limit;
+        return $this;
+    }
+
+    /**
+     * Get the rows that are to be returned
+     * Compatibility stub
+     * @return int
+     */
+    public function getLimit(): int
+    {
+        return $this->rows;
+    }
+
 }
