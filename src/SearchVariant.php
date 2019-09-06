@@ -21,7 +21,7 @@ abstract class SearchVariant extends SiteState
      * @return bool
      * @throws \ReflectionException
      */
-    public static function has_extension($class, $extension)
+    public static function has_extension($class, $extension): bool
     {
         return parent::hasExtension($class, $extension);
     }
@@ -31,7 +31,7 @@ abstract class SearchVariant extends SiteState
      * @param $state
      * @throws \ReflectionException
      */
-    public static function activate_state($state)
+    public static function activate_state($state): void
     {
         parent::withState($state);
     }
