@@ -2,7 +2,6 @@
 
 namespace SilverStripe\FullTextSearch\Search\Variants;
 
-
 use Firesphere\SolrSearch\States\SiteState;
 
 /**
