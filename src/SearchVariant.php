@@ -3,6 +3,7 @@
 namespace SilverStripe\FullTextSearch\Search\Variants;
 
 use Firesphere\SolrSearch\States\SiteState;
+use ReflectionException;
 
 /**
  * Class SearchVariant is a stub to reduce the impact of migration to a newer Solr implementation.
@@ -18,7 +19,7 @@ abstract class SearchVariant extends SiteState
      * @param string $class
      * @param string $extension
      * @return bool
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public static function has_extension($class, $extension): bool
     {
@@ -28,7 +29,7 @@ abstract class SearchVariant extends SiteState
     /**
      * Invoke the WithState method through a stub
      * @param $state
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public static function activate_state($state): void
     {
