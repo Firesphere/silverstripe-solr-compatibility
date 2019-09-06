@@ -16,6 +16,7 @@ abstract class SearchVariant extends SiteState
 {
     /**
      * Stub to supply a check for a class if it has an extension applied
+     * @deprecated use {@link SiteState::hasExtension()}
      * @param string $class
      * @param string $extension
      * @return bool
@@ -28,6 +29,7 @@ abstract class SearchVariant extends SiteState
 
     /**
      * Invoke the WithState method through a stub
+     * @deprecated use {@link SiteState::withState()}
      * @param $state
      * @throws ReflectionException
      */
