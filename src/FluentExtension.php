@@ -6,12 +6,14 @@ use Firesphere\SolrSearch\Factories\DocumentFactory;
 use Firesphere\SolrSearch\Indexes\BaseIndex;
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSearch\Services\SchemaService;
+use Firesphere\SolrSearch\States\SiteState;
 use SilverStripe\Core\Extension;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\DataObject;
 use Solarium\QueryType\Select\Query\Query;
 use TractorCow\Fluent\Model\Locale;
+use TractorCow\Fluent\Search\FluentSearchVariant;
 use TractorCow\Fluent\State\FluentState;
 
 if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
@@ -27,6 +29,14 @@ if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
  */
 class FluentExtension extends Extension
 {
+    /**
+     * Add the fluent states
+     */
+    public function onBeforeInit()
+    {
+        $locales = Locale::get()->exclude(['IsGlobalDefault' => true]);
+        SiteState::addStates($locales->column('Locale'));
+    }
     /**
      * Add the needed language copy fields to Solr
      */
