@@ -53,5 +53,4 @@ class SearchQuery extends BaseQuery
     {
         return $this->rows;
     }
-
 }
