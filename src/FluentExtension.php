@@ -13,17 +13,13 @@ use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\DataObject;
 use Solarium\QueryType\Select\Query\Query;
 use TractorCow\Fluent\Model\Locale;
-use TractorCow\Fluent\Search\FluentSearchVariant;
 use TractorCow\Fluent\State\FluentState;
-
-if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
-    return;
-}
 
 /**
  * Support for Fluent translations.
  *
  * This class should be moved to a separate repo or to Fluent, but provides the basic Fluent support for now
+ *
  * @package Firesphere\SolrSearch\Compat
  * @property DocumentFactory|BaseIndex|SchemaService|FluentExtension $owner
  */
@@ -34,14 +30,21 @@ class FluentExtension extends Extension
      */
     public function onBeforeInit()
     {
+        if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
+            return;
+        }
         $locales = Locale::get()->exclude(['IsGlobalDefault' => true]);
         SiteState::addStates($locales->column('Locale'));
     }
+
     /**
      * Add the needed language copy fields to Solr
      */
     public function onAfterInit(): void
     {
+        if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
+            return;
+        }
         $locales = Locale::get()->exclude(['IsGlobalDefault' => true]);
         /** @var BaseIndex $owner */
         $owner = $this->owner;
@@ -56,11 +59,15 @@ class FluentExtension extends Extension
 
     /**
      * Add the locale fields
+     *
      * @param ArrayList|DataList $data
      * @param DataObject $item
      */
     public function onAfterFieldDefinition($data, $item): void
     {
+        if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
+            return;
+        }
         $locales = Locale::get()->exclude(['IsGlobalDefault' => true]);
 
         foreach ($locales as $locale) {
@@ -75,11 +82,15 @@ class FluentExtension extends Extension
 
     /**
      * Update the Solr field for the value to use the locale name
+     *
      * @param array $field
      * @param string $value
      */
     public function onBeforeAddDoc(&$field, &$value): void
     {
+        if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
+            return;
+        }
         $fluentState = FluentState::singleton();
         $locale = $fluentState->getLocale();
         /** @var Locale $defaultLocale */
@@ -91,11 +102,15 @@ class FluentExtension extends Extension
 
     /**
      * Set to the correct language to search if needed
+     *
      * @param BaseQuery $query
      * @param Query $clientQuery
      */
     public function onBeforeSearch($query, $clientQuery): void
     {
+        if (!class_exists('TractorCow\\Fluent\\Model\\Locale')) {
+            return;
+        }
         $locale = FluentState::singleton()->getLocale();
         $defaultLocale = Locale::get()->filter(['IsGlobalDefault' => true])->first();
         if ($locale && $defaultLocale !== null && $locale !== $defaultLocale->Locale) {
