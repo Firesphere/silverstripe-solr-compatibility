@@ -7,6 +7,7 @@ use Firesphere\SolrSearch\Queries\BaseQuery;
 /**
  * Class SearchQuery
  * Cover any changes between the SilverStripe FulltextSearch module and the upgraded module
+ *
  * @package SilverStripe\FullTextSearch\Search\Queries
  */
 class SearchQuery extends BaseQuery
@@ -18,6 +19,7 @@ class SearchQuery extends BaseQuery
 
     /**
      * A simple stub to cover changes between Solr Search modules
+     *
      * @deprecated please use {@link self::addTerm()}
      * @param string $text
      * @param null|array $fields
@@ -35,18 +37,21 @@ class SearchQuery extends BaseQuery
     /**
      * Set the rows that are to be returned
      * Compatibility stub
+     *
      * @param int $limit
      * @return $this
      */
     public function setLimit($limit): self
     {
         $this->rows = $limit;
+
         return $this;
     }
 
     /**
      * Get the rows that are to be returned
      * Compatibility stub
+     *
      * @return int
      */
     public function getLimit(): int

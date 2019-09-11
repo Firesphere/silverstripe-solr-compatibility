@@ -43,9 +43,9 @@ class FulltextSearchExtension extends Extension
                             'CopyFields'     => $owner->getCopyFields(),
                             'DefaultField'   => $owner->getDefaultField(),
                             'FacetFields'    => $owner->getFacetFields(),
-                            'StoredFields'   => $owner->getStoredFields()
-                        ]
-                ]
+                            'StoredFields'   => $owner->getStoredFields(),
+                        ],
+                ],
             ];
 
             Debug::dump(yaml_emit($result));
@@ -55,8 +55,10 @@ class FulltextSearchExtension extends Extension
 
         throw new LogicException('yaml-emit PHP module missing');
     }
+
     /**
      * Convert the SearchResult class to a Full text search compatible ArrayData
+     *
      * @param SearchResult|ArrayData $results
      */
     public function updateSearchResults(&$results): void
@@ -69,7 +71,7 @@ class FulltextSearchExtension extends Extension
             'Spellcheck'            => $results->getSpellcheck(),
             'Suggestion'            => $results->getCollatedSpellcheck(),
             'SuggestionNice'        => $this->getCollatedNice($results->getCollatedSpellcheck()),
-            'SuggestionQueryString' => $results->getCollatedSpellcheck()
+            'SuggestionQueryString' => $results->getCollatedSpellcheck(),
         ];
         // Override the results with an FTS compatible feature list
         $results = ArrayData::create($data);
@@ -89,15 +91,15 @@ class FulltextSearchExtension extends Extension
     /**
      * Convert the old search method to the new BaseIndex doSearch methods
      *
-     * @param BaseQuery $query
+     * @deprecated This is used as an Fulltext Search compatibility method. Call doSearch instead with the correct Query
      * @param int $start deprecated in favour of $query, exists for backward compatibility with FTS
      * @param int $limit deprecated in favour of $query, exists for backward compatibility with FTS
      * @param array $params deprecated in favour of $query, exists for backward compatibility with FTS
      * @param bool $spellcheck deprecated in favour of #query, exists for backward compatibility with FTS
+     * @param BaseQuery $query
      * @return SearchResult|ArrayData|mixed
-     * @throws GuzzleException
      * @throws ValidationException
-     * @deprecated This is used as an Fulltext Search compatibility method. Call doSearch instead with the correct Query
+     * @throws GuzzleException
      */
     public function search($query, $start = 0, $limit = 10, $params = [], $spellcheck = null)
     {

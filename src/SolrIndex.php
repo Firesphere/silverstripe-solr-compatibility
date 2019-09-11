@@ -25,6 +25,7 @@ abstract class SolrIndex extends BaseIndex
 
     /**
      * Return the classname by default (Not advised)
+     *
      * @return string
      */
     public function getIndexName()
