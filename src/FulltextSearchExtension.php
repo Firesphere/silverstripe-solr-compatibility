@@ -92,11 +92,11 @@ class FulltextSearchExtension extends Extension
      * Convert the old search method to the new BaseIndex doSearch methods
      *
      * @deprecated This is used as an Fulltext Search compatibility method. Call doSearch instead with the correct Query
-     * @param int $start deprecated in favour of $query, exists for backward compatibility with FTS
+     * @param BaseQuery $query
+     * @param int $start eprecated in favour of $query, exists for backward compatibility with FTS
      * @param int $limit deprecated in favour of $query, exists for backward compatibility with FTS
      * @param array $params deprecated in favour of $query, exists for backward compatibility with FTS
      * @param bool $spellcheck deprecated in favour of #query, exists for backward compatibility with FTS
-     * @param BaseQuery $query
      * @return SearchResult|ArrayData|mixed
      * @throws ValidationException
      * @throws GuzzleException

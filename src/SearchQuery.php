@@ -38,6 +38,7 @@ class SearchQuery extends BaseQuery
      * Set the rows that are to be returned
      * Compatibility stub
      *
+     * @deprecated please use {@link self::setRows()}
      * @param int $limit
      * @return $this
      */
@@ -52,6 +53,7 @@ class SearchQuery extends BaseQuery
      * Get the rows that are to be returned
      * Compatibility stub
      *
+     * @deprecated please use {@link self::getRows()}
      * @return int
      */
     public function getLimit(): int
