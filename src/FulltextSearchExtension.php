@@ -100,6 +100,7 @@ class FulltextSearchExtension extends Extension
      * @return SearchResult|ArrayData|mixed
      * @throws ValidationException
      * @throws GuzzleException
+     * @throws \ReflectionException
      */
     public function search($query, $start = 0, $limit = 10, $params = [], $spellcheck = null)
     {
