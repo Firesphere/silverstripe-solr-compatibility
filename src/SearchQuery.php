@@ -20,11 +20,11 @@ class SearchQuery extends BaseQuery
     /**
      * A simple stub to cover changes between Solr Search modules
      *
-     * @deprecated please use {@link self::addTerm()}
      * @param string $text
      * @param null|array $fields
      * @param array $boost
      * @return $this
+     * @deprecated please use {@link self::addTerm()}
      */
     public function addSearchTerm($text, $fields = [], $boost = [])
     {
@@ -38,9 +38,9 @@ class SearchQuery extends BaseQuery
      * Set the rows that are to be returned
      * Compatibility stub
      *
-     * @deprecated please use {@link self::setRows()}
      * @param int $limit
      * @return $this
+     * @deprecated please use {@link self::setRows()}
      */
     public function setLimit($limit): self
     {
@@ -53,8 +53,8 @@ class SearchQuery extends BaseQuery
      * Get the rows that are to be returned
      * Compatibility stub
      *
-     * @deprecated please use {@link self::getRows()}
      * @return int
+     * @deprecated please use {@link self::getRows()}
      */
     public function getLimit(): int
     {

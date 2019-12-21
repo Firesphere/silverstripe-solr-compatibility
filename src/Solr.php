@@ -23,16 +23,17 @@ class Solr
         $configArray = [
             'endpoint' => [
                 'localhost' => [
-                    'host' => $config['host'],
-                    'port' => $config['port'],
+                    'host' => $config['host'] ?? '127.0.0.1',
+                    'port' => $config['port'] ?? 8983,
                 ],
             ],
         ];
         SolrCoreService::config()->set('config', $configArray);
         $modeArray = [
-            'mode' => $config['indexstore']['mode'],
-            'path' => $config['indexstore']['path'],
+            'mode' => $config['indexstore']['mode'] ?? 'file',
+            'path' => $config['indexstore']['path'] ?? '.solr',
         ];
         SolrCoreService::config()->set('mode', $modeArray);
+        SolrCoreService::config()->set('cpucores', $config['cores'] ?? 1);
     }
 }
