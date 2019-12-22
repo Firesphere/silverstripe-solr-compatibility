@@ -5,7 +5,6 @@ namespace Firesphere\SolrSearch\Compat\Tests;
 
 
 use Firesphere\SolrSearch\Services\SolrCoreService;
-use SilverStripe\Dev\Debug;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\FullTextSearch\Solr\Solr;
 

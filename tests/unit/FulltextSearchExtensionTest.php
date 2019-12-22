@@ -10,7 +10,6 @@ use Firesphere\SolrSearch\Tests\TestIndex;
 use Psr\Log\NullLogger;
 use SilverStripe\Control\NullHTTPRequest;
 use SilverStripe\Core\Injector\Injector;
-use SilverStripe\Dev\Debug;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\View\ArrayData;
 
