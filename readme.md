@@ -11,7 +11,7 @@
 
 This module provides some stubs to make migrating from the FulltextSearch module easier.
 
-[See the documentation](https://firesphere.github.io/solr-docs/10-Submodules/01-Fulltext-Search-Compatibility.html)
+[See the documentation](https://firesphere.github.io/solr-docs/11-Submodules/01-Fulltext-Search-Compatibility.html)
 
 ## Installation
 
