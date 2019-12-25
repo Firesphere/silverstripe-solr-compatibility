@@ -16,7 +16,7 @@ use SilverStripe\ORM\ValidationException;
 use SilverStripe\View\ArrayData;
 
 /**
- * Class FulltextSearchExtension
+ * Class \Firesphere\SolrCompatibility\Extensions\FulltextSearchExtension
  * Backward compatibility stubs for the Full text search module
  *
  * @package Firesphere\SolrSearch\Extensions
