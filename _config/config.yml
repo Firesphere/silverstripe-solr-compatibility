@@ -1,3 +1,3 @@
 Firesphere\SolrSearch\Indexes\BaseIndex:
   extensions:
-    - Firesphere\SolrSearch\Compat\FulltextSearchExtension # Return a FTS compatible result
+    - Firesphere\SolrCompatibility\Extensions\FulltextSearchExtension # Return a FTS compatible result

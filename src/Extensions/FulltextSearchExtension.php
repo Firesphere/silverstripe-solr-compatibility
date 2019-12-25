@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Firesphere\SolrSearch\Compat;
+namespace Firesphere\SolrCompatibility\Extensions;
 
 use Firesphere\SolrSearch\Indexes\BaseIndex;
 use Firesphere\SolrSearch\Queries\BaseQuery;
@@ -20,7 +20,7 @@ use SilverStripe\View\ArrayData;
  * Backward compatibility stubs for the Full text search module
  *
  * @package Firesphere\SolrSearch\Extensions
- * @property FulltextSearchExtension $owner
+ * @property BaseIndex|FulltextSearchExtension $owner
  */
 class FulltextSearchExtension extends Extension
 {
