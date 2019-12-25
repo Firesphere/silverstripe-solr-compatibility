@@ -3,13 +3,11 @@
 
 namespace Firesphere\SolrCompatibility\Tests\Tests;
 
-
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\FullTextSearch\Search\Queries\SearchQuery;
 
 class SearchQueryTest extends SapphireTest
 {
-
     public function testAddSearchTerm()
     {
         $query = new SearchQuery();

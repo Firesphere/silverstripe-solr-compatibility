@@ -3,14 +3,12 @@
 
 namespace Firesphere\SolrCompatibility\Tests\Tests;
 
-
 use Firesphere\SolrSearch\Services\SolrCoreService;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\FullTextSearch\Solr\Solr;
 
 class SolrTest extends SapphireTest
 {
-
     public function testConfigureServer()
     {
         $config = [
