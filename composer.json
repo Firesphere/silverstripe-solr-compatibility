@@ -38,7 +38,7 @@
     },
     "autoload": {
       "psr-4": {
-        "Firesphere\\SolrSearch": "src",
+        "Firesphere\\SolrCompatibility": "src",
         "SilverStripe\\FulltextSearch": "src"
       }
     }
