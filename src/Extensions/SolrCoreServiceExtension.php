@@ -34,5 +34,4 @@ class SolrCoreServiceExtension extends Extension
     {
         return $this->owner->coreStatus($core);
     }
-
 }
