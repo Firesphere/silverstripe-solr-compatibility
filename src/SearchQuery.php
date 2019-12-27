@@ -22,11 +22,11 @@ class SearchQuery extends BaseQuery
      *
      * @param string $text
      * @param null|array $fields
-     * @param array $boost
+     * @param int $boost
      * @return $this
      * @deprecated please use {@link self::addTerm()}
      */
-    public function addSearchTerm($text, $fields = [], $boost = [])
+    public function addSearchTerm($text, $fields = [], int $boost = 0)
     {
         $fields = $fields ? (array)$fields : [];
         $this->addTerm($text, $fields, $boost);
