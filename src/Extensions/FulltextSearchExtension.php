@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * Class FulltextSearchExtension|Firesphere\SolrCompatibility\Extensions\FulltextSearchExtension provide help for
+ * migrating from the old module
+ *
+ * @package Firesphere\SolrCompatibility\Extensions
+ * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
+ * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
+ */
 
 namespace Firesphere\SolrCompatibility\Extensions;
 

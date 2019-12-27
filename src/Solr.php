@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * Class Solr|SilverStripe\FullTextSearch\Search\Queries\Solr provide backward compatibility help for
+ * migrating from the old module
+ *
+ * @package SilverStripe\FullTextSearch\Search\Queries
+ * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
+ * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
+ */
 
 namespace SilverStripe\FullTextSearch\Solr;
 
