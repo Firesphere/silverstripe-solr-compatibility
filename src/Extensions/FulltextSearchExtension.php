@@ -124,4 +124,16 @@ class FulltextSearchExtension extends Extension
 
         return $owner->doSearch($query);
     }
+
+    /**
+     * Add a Fulltext Field
+     *
+     * @param bool $includeSubclasses Compatibility mode, not actually used
+     * @throws ReflectionException
+     * @deprecated Please use addAllFulltextFields(). IncludeSubClasses is not used anymore
+     */
+    public function addFulltextFields($includeSubclasses = true)
+    {
+        $this->owner->addAllFulltextFields();
+    }
 }
