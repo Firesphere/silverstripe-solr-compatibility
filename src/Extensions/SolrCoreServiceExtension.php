@@ -10,6 +10,7 @@
 
 namespace Firesphere\SolrCompatibility\Extensions;
 
+use Firesphere\SolrSearch\Services\SolrCoreService;
 use SilverStripe\Core\Extension;
 use Solarium\QueryType\Server\CoreAdmin\Result\StatusResult;
 
@@ -18,7 +19,7 @@ use Solarium\QueryType\Server\CoreAdmin\Result\StatusResult;
  *
  * Add the old coreIsActive method to the Service for backward compatibility
  *
- * @property SolrCoreServiceExtension $owner
+ * @property SolrCoreServiceExtension|SolrCoreService $owner
  */
 class SolrCoreServiceExtension extends Extension
 {
