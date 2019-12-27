@@ -134,6 +134,9 @@ class FulltextSearchExtension extends Extension
      */
     public function addFulltextFields($includeSubclasses = true)
     {
-        $this->owner->addAllFulltextFields();
+        /** @var BaseIndex $owner */
+        $owner = $this->owner;
+
+        $owner->addAllFulltextFields();
     }
 }
