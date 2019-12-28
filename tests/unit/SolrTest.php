@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Firesphere\SolrCompatibility\Tests\Tests;
+namespace Firesphere\SolrCompatibility\Tests;
 
 use Firesphere\SolrSearch\Services\SolrCoreService;
 use SilverStripe\Dev\SapphireTest;

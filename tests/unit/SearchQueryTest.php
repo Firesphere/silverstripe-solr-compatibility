@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Firesphere\SolrCompatibility\Tests\Tests;
+namespace Firesphere\SolrCompatibility\Tests;
 
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\FullTextSearch\Search\Queries\SearchQuery;
