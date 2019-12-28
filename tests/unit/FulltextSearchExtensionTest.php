@@ -3,6 +3,7 @@
 
 namespace Firesphere\SolrCompatibility\Tests;
 
+use Firesphere\SolrCompatibility\Extensions\FulltextSearchExtension;
 use Firesphere\SolrSearch\Indexes\BaseIndex;
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSearch\Tasks\SolrConfigureTask;
@@ -41,6 +42,17 @@ class FulltextSearchExtensionTest extends SapphireTest
         $this->assertInstanceOf(ArrayData::class, $result);
 
         $this->assertEquals(['Title'], $query->getFields());
+    }
+
+    public function testAddFulltextFields()
+    {
+        $index = new TestIndex();
+        $index2 = new TestIndex();
+
+        $extension1 = new FulltextSearchExtension();
+        $extension1->setOwner($index);
+
+        $this->assertEquals($extension1->addFulltextFields(), $index2->addAllFulltextFields());
     }
 
     /**
