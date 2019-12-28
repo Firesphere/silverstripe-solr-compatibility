@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Firesphere\SolrSearch\Tests;
+namespace Firesphere\SolrCompatibility\Tests;
 
 use SilverStripe\Dev\TestOnly;
 use SilverStripe\ORM\DataObject;

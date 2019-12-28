@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Firesphere\SolrSearch\Tests;
+namespace Firesphere\SolrCompatibility\Tests;
 
 use Firesphere\SolrSearch\Interfaces\SiteStateInterface;
 use Firesphere\SolrSearch\Queries\BaseQuery;

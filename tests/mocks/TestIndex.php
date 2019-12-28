@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Firesphere\SolrSearch\Tests;
+namespace Firesphere\SolrCompatibility\Tests;
 
 use Firesphere\SolrSearch\Indexes\BaseIndex;
 use SilverStripe\CMS\Model\SiteTree;

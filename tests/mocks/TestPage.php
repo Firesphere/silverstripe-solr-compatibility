@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Firesphere\SolrSearch\Tests;
+namespace Firesphere\SolrCompatibility\Tests;
 
 use Page;
 use SilverStripe\Dev\TestOnly;
 
 /**
  * Class TestPage
- * @package Firesphere\SolrSearch\Tests
+ * @package Firesphere\SolrCompatibility\Tests
  */
 class TestPage extends Page implements TestOnly
 {
