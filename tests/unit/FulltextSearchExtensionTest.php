@@ -1,11 +1,12 @@
 <?php
 
 
-namespace Firesphere\SolrCompatibility\Tests;
+namespace Firesphere\SolrCompatibility\Tests\Tests;
 
 use Firesphere\SolrSearch\Indexes\BaseIndex;
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSearch\Tasks\SolrConfigureTask;
+use Firesphere\SolrCompatibility\Tests\TestIndex;
 use Psr\Log\NullLogger;
 use SilverStripe\Control\NullHTTPRequest;
 use SilverStripe\Core\Injector\Injector;
