@@ -12,10 +12,8 @@ class SolrCoreServiceExtensionTest extends SapphireTest
 
     public function testCoreIsActive()
     {
-        $index = new \CircleCITestIndex();
-
         $class = new SolrCoreService();
 
-        $this->assertEquals($class->coreStatus('CircleCITestIndex'), $class->coreIsActive('CircleCITestIndex'));
+        $this->assertGreaterThan($class->coreStatus('CircleCITestIndex')->getUptime(), $class->coreIsActive('CircleCITestIndex')->getUptime());
     }
 }
