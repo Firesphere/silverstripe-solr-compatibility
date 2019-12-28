@@ -36,6 +36,7 @@ class FulltextSearchExtension extends Extension
      */
     public function initToYml(): void
     {
+        // @codeCoverageIgnoreStart
         if (function_exists('yaml_emit')) {
             /** @var BaseIndex $owner */
             $owner = $this->owner;
@@ -60,6 +61,7 @@ class FulltextSearchExtension extends Extension
 
             return;
         }
+        // @codeCoverageIgnoreEnd
 
         throw new LogicException('yaml-emit PHP module missing');
     }
