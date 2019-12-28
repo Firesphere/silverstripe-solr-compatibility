@@ -18,8 +18,8 @@ class SolrCoreServiceExtensionTest extends SapphireTest
         $extension->setOwner($service);
 
         $this->assertGreaterThan(
-            $extension->coreStatus('CircleCITestIndex')->getUptime(),
-            $service->coreIsActive('CircleCITestIndex')->getUptime()
+            $extension->coreIsActive('CircleCITestIndex')->getUptime(),
+            $service->coreStatus('CircleCITestIndex')->getUptime()
         );
     }
 }
