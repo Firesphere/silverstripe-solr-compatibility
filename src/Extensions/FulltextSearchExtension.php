@@ -16,7 +16,6 @@ use Firesphere\SolrSearch\Results\SearchResult;
 use GuzzleHttp\Exception\GuzzleException;
 use LogicException;
 use ReflectionException;
-use SilverStripe\Control\Controller;
 use SilverStripe\Core\Extension;
 use SilverStripe\Dev\Debug;
 use SilverStripe\ORM\ValidationException;
@@ -73,15 +72,15 @@ class FulltextSearchExtension extends Extension
      */
     public function updateSearchResults(&$results): void
     {
-        $request = Controller::curr()->getRequest();
         $data = [
-            'Matches'               => $results->getPaginatedMatches($request),
+            'Matches'               => $results->getPaginatedMatches(),
             'Facets'                => $results->getFacets(),
             'Highlights'            => $results->getHighlight(),
             'Spellcheck'            => $results->getSpellcheck(),
             'Suggestion'            => $results->getCollatedSpellcheck(),
             'SuggestionNice'        => $this->getCollatedNice($results->getCollatedSpellcheck()),
             'SuggestionQueryString' => $results->getCollatedSpellcheck(),
+            'Original'              => $results
         ];
         // Override the results with an FTS compatible feature list
         $results = ArrayData::create($data);

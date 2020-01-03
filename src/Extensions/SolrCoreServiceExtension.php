@@ -19,7 +19,7 @@ use Solarium\QueryType\Server\CoreAdmin\Result\StatusResult;
  *
  * Add the old coreIsActive method to the Service for backward compatibility
  *
- * @property SolrCoreServiceExtension|SolrCoreService $owner
+ * @property SolrCoreService|SolrCoreServiceExtension $owner
  */
 class SolrCoreServiceExtension extends Extension
 {
