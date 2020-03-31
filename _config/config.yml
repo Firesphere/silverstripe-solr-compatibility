@@ -4,3 +4,6 @@ Firesphere\SolrSearch\Indexes\BaseIndex:
 Firesphere\SolrSearch\Services\SolrCoreService:
   extensions:
     - Firesphere\SolrCompatibility\Extensions\SolrCoreServiceExtension
+SilverStripe\ORM\DataObject:
+  extensions:
+    - Firesphere\SolrCompatibility\Extensions\DataObjectExtension
