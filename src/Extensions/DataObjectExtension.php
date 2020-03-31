@@ -1,4 +1,12 @@
 <?php
+/**
+ * Class FulltextSearchExtension|Firesphere\SolrCompatibility\Extensions\DataObjectExtension provide help for
+ * migrating from the old module
+ *
+ * @package Firesphere\SolrCompatibility\Extensions
+ * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
+ * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
+ */
 
 
 namespace Firesphere\SolrCompatibility\Extensions;
@@ -13,6 +21,9 @@ use SilverStripe\ORM\DataObject;
  */
 class DataObjectExtension extends Extension
 {
+    /**
+     * Stub for triggering a reindex of the owner
+     */
     public function triggerReindex()
     {
         $this->owner->doReindex();
