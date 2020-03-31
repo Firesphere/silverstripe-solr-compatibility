@@ -3,7 +3,6 @@
 
 namespace Firesphere\SolrCompatibility\Extensions;
 
-
 use SilverStripe\Core\Extension;
 use SilverStripe\ORM\DataObject;
 
@@ -14,7 +13,6 @@ use SilverStripe\ORM\DataObject;
  */
 class DataObjectExtension extends Extension
 {
-
     public function triggerReindex()
     {
         $this->owner->doReindex();
