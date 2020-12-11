@@ -3,7 +3,7 @@
  * class SolrCoreServiceExtension|Firesphere\SolrCompatibility\Extensions\SolrCoreServiceExtension add the old
  * active state check
  *
- * @package Firesphere\SolrCompatibility\Extensions
+ * @package Firesphere\Solr\Compatibility
  * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
  * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
  */

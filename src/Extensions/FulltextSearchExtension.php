@@ -3,7 +3,7 @@
  * Class FulltextSearchExtension|Firesphere\SolrCompatibility\Extensions\FulltextSearchExtension provide help for
  * migrating from the old module
  *
- * @package Firesphere\SolrCompatibility\Extensions
+ * @package Firesphere\Solr\Compatibility
  * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
  * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
  */
@@ -25,7 +25,7 @@ use SilverStripe\View\ArrayData;
  * Class \Firesphere\SolrCompatibility\Extensions\FulltextSearchExtension
  * Backward compatibility stubs for the Full text search module
  *
- * @package Firesphere\SolrCompatibility\Extensions
+ * @package Firesphere\Solr\Compatibility
  * @property BaseIndex|FulltextSearchExtension $owner
  */
 class FulltextSearchExtension extends Extension

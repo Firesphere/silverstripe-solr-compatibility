@@ -3,7 +3,7 @@
  * Class FulltextSearchExtension|Firesphere\SolrCompatibility\Extensions\DataObjectExtension provide help for
  * migrating from the old module
  *
- * @package Firesphere\SolrCompatibility\Extensions
+ * @package Firesphere\Solr\Compatibility
  * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
  * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
  */
