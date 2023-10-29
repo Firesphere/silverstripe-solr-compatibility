@@ -9,6 +9,8 @@
 
 # Solr Search fulltextsearch compatibility module
 
+[GPL v3 or later](LICENSE.md)
+
 This module provides some stubs to make migrating from the FulltextSearch module easier.
 
 [See the documentation](https://firesphere.github.io/solr-docs/11-Submodules/01-Fulltext-Search-Compatibility.html)
